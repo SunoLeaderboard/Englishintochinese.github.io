@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>英翻中練習生成器</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>英翻中練習生成器</h1>
+    <p class="sub">輸入兩個英文單字或片語與中文翻譯，點開始後自動產生兩題中文→英文練習，答案可個別顯示/隱藏。</p>
+  </header>
+
+  <main class="container">
+    <section class="inputs">
+      <div class="term-card">
+        <h2>字詞一</h2>
+        <label>英文單字／片語
+          <input id="en1" type="text" placeholder="e.g. turn down / responsibility" />
+        </label>
+        <label>中文翻譯
+          <input id="zh1" type="text" placeholder="e.g. 拒絕 / 責任" />
+        </label>
+      </div>
+
+      <div class="term-card">
+        <h2>字詞二</h2>
+        <label>英文單字／片語
+          <input id="en2" type="text" placeholder="e.g. look into / patience" />
+        </label>
+        <label>中文翻譯
+          <input id="zh2" type="text" placeholder="e.g. 調查 / 耐心" />
+        </label>
+      </div>
+    </section>
+
+    <div class="actions">
+      <label style="display:flex;align-items:center;gap:8px;">
+        難度
+        <select id="difficulty">
+          <option value="easy">簡單</option>
+          <option value="medium" selected>中等</option>
+          <option value="hard">進階</option>
+        </select>
+      </label>
+      <label style="display:flex;align-items:center;gap:8px;">
+        主題
+        <select id="theme">
+          <option value="random" selected>隨機</option>
+          <option value="season">季節</option>
+          <option value="climate">氣候</option>
+          <option value="interest">興趣</option>
+          <option value="tech">科技</option>
+          <option value="ecology">生態</option>
+          <option value="sdg">永續（SDG）</option>
+        </select>
+      </label>
+      <button id="startBtn" class="primary">開始</button>
+      <button id="regenBtn" class="ghost" disabled>再產生一次</button>
+    </div>
+
+    <section id="results" class="results" aria-live="polite"></section>
+  </main>
+
+  <footer class="app-footer">
+    <small>簡潔介面・適合高中生程度・本機端運作</small>
+  </footer>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
